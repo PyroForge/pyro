@@ -28,7 +28,7 @@ std::pair<int, int> get_b_count(const std::vector<std::string>& og, int lnum, in
     int armbytes = 0;
     int x86bytes = 0;
 
-    const int rl_x86 = 30, rl_arm = 5;
+    const int rl_x86 = 28, rl_arm = 5;
     const int sc_x86 = 10, sc_arm = 1;
     const int ed_x86 = 20, ed_arm = 3;
 
