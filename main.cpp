@@ -86,17 +86,8 @@ int main(int argc, char* argv[]) {
             // mov rsi,name
             // mov rdx,namelen
             // syscall
-            if (counter != 0) {
-                auto past_instruction = sp(og[counter - 1]);
-                if (past_instruction.first != "raw_log" and past_instruction.first != "log") {
-                    textL64 = textL64 + tab + "mov rax,1\n";
-                    textL64 = textL64 + tab + "mov rdi,1\n";
-                }
-            }
-            if (counter == 0) {
-                textL64 = textL64 + tab + "mov rax,1\n";
-                textL64 = textL64 + tab + "mov rdi,1\n";
-            }
+            textL64 = textL64 + tab + "mov rax,1\n";
+            textL64 = textL64 + tab + "mov rdi,1\n";
             textL64 = textL64 + tab + "mov rsi,v" + std::to_string(counter) + "\n";
             textL64 = textL64 + tab + "mov rdx,c" + std::to_string(counter) + "\n";
             textL64 = textL64 + tab + "syscall\n";
